@@ -1,11 +1,26 @@
 import type { NextPage } from 'next'
+import { type } from 'os'
+import { useEffect, useState } from 'react'
+import { Home } from '../containers/Home'
+import { Login } from '../containers/Login'
 
-import {Login} from '../containers/Login'
+const Index: NextPage = () => {
 
-const Home: NextPage = () => {
+  const [accessToken, setAcessToken] = useState('');
+
+  useEffect(() => { 
+    if(typeof window !== 'undefined'){
+      const token = localStorage.getItem('accessToken');
+      if(token){
+        setAcessToken(token);
+      }
+      
+    }
+  },[setAcessToken]);
+
   return (
-    <Login/>
-  )
+    !accessToken ? <Login setAccessToken={setAcessToken} /> : <Home />
+  );
 }
 
-export default Home
+export default Index
