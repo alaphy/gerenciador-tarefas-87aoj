@@ -1,101 +1,88 @@
-@import './configs.scss';
+@import './config.scss';
 
 .container-header{
-display: flex;
-flex-direction: row;
-width: 100%;
-align-items: center;
-justify-content: space-between;
-border-bottom-color: $lightGreyColor;
-border-bottom-width: 1px ;
-border-bottom-style: solid ;
-padding: 24px 0px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-color: $lightGreyColor;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
-    button{
-        display: none;
-
-    }
-
-    .logo{
+    .logo {
         width: 92px;
         margin-left: 24px;
+    }
+
+    button {
+        display: none;
     }
 
     .desktop {
         display: none;
     }
 
-    .mobile{
+    .mobile {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
 
-
-        span{
+        span {
             color: $primaryColor;
             margin-right: 10px;
         }
-    
-        img{
+        img {
             width: 30px;
-            margin-right: 21px;
-    
+            margin-right: 16px;
         }
     }
 
-    @media screen and(min-width: $midiaDesktop){
-      
-        .mobile{
+    @media screen and (min-width:1024px) {
+        .mobile {
             display: none;
         }
 
-        .logo{
+        .logo {
             width: 130px;
             margin-left: 80px;
         }
-        button{
+
+        button {
             display: block;
-            border: none;
+            border : none;
             background-color: $secondaryColor;
-            border-radius: 12px;
             color: white;
+            border-radius: 12px;
             font-size: 16px;
-            width: 170px;
+            width: 175px;
             height: 40px;
             align-items: center;
-            
 
+            span {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
         }
 
-        span{
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
-        
-
-
-
-        .desktop{
+        .desktop {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             margin-right: 80px;
     
-            span{
-                font-size: 18px;    
-                margin-right: 10px;
+            span {
+                font-size: 20px;
                 color: $primaryColor;
+                margin-right: 20px;
             }
-        
-            img{
+            img {
                 cursor: pointer;
-        
             }
         }
-
-    } 
-    
-
+    }
 }

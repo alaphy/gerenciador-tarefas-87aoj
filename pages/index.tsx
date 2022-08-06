@@ -8,18 +8,19 @@ const Index: NextPage = () => {
 
   const [accessToken, setAcessToken] = useState('');
 
-  useEffect(() => { 
-    if(typeof window !== 'undefined'){
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       const token = localStorage.getItem('accessToken');
-      if(token){
+      if (token) {
         setAcessToken(token);
       }
-      
+
     }
-  },[setAcessToken]);
+  }, [setAcessToken]);
 
   return (
-    !accessToken ? <Login setAccessToken={setAcessToken} /> : <Home />
+    !accessToken ? <Login setAccessToken={setAcessToken} />
+      : <Home setAccessToken={setAcessToken} />
   );
 }
 
